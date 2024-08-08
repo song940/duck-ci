@@ -1,0 +1,36 @@
+{{define "page"}}
+<h2>{{.project.Name}}</h2>
+<p>{{.project.Repo}}</p>
+
+<div>
+  <h3>Create Task</h3>
+  <form method="post" action="/task">
+    <input name="project" type="hidden" value="{{.project.Id}}">
+    <input type="text" name="branch" placeholder="branch" required value="master">
+    <button>create</button>
+  </form>
+</div>
+
+<div>
+  <h3>Tasks</h3>
+
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range .tasks}}
+      <tr>
+        <td><a href="/task?id={{.Id}}">Task #{{.Id}}</a></td>
+        <td>{{.Status}}</td>
+        <td>{{.CreatedAt}}</td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>
+{{end}}

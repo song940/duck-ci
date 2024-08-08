@@ -1,0 +1,25 @@
+{{define "page"}}
+
+<h2>Projects</h2>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Repo</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{range .projects}}
+    <tr>
+      <td><a href="/projects?id={{.Id}}">{{.Name}}</a></td>
+      <td>{{.Repo}}</td>
+      <td>{{.CreatedAt}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+
+</table>
+
+{{end}}

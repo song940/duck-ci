@@ -1,0 +1,19 @@
+{{define "page"}}
+
+<h2>Task #{{.job.Id}}</h2>
+
+<p>Status: {{.job.Status}}</p>
+<p>Created At: {{.job.CreatedAt}}</p>
+
+<h3>Log Output:</h3>
+
+<ul class="logs">
+  {{range .logs}}
+  <li>
+    <time>{{.CreatedAt}}</time>
+    <span>{{.Log}}</span>
+  </li>
+  {{end}}
+</ul>
+
+{{end}}

@@ -1,0 +1,8 @@
+
+steps:
+  - name: install
+    image: node:alpine
+    runs: npm i
+  - name: test
+    image: node:alpine
+    runs: npm test

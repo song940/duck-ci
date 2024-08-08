@@ -1,0 +1,17 @@
+{{define "page"}}
+<h2>Create Project</h2>
+
+<form method="post" action="/projects" class="form">
+  <div class="form-field">
+    <label for="title">Name:</label>
+    <input type="text" class="input" name="name" id="title">
+  </div>
+  <div class="form-field">
+    <label for="repo">Repo:</label>
+    <input type="text" class="input" name="repo" id="repo">
+  </div>
+  <div class="form-field">
+    <button class="button button-primary">create</button>
+  </div>
+</form>
+{{end}}
